@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Page</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="functions.js"></script>
+    <script src="addnotice.js"></script>
+    <script src="viewnotice.js"></script>
+
+</head>
+<body>
+  <div class="container text-center" style="font-size:40px;">
+    ADMIN PAGE
+  </div>
+  <div class="row" style = "padding:70px">
+    <ul>
+      <li><button onclick="add()">ADD NOTICE</button></li>
+      <div style="padding:20px;display:none" id="add">
+       <form>
+       <input type="number" placeholder="Notice ID" id="id">
+        <input type="text" style="width:700px;" id="notice" placeholder="Text">
+        <button id="addbtn">Submit</button>
+        </form>
+      </div>
+
+      <li style="padding-top:10px;"><button onclick="delete1()">DELETE NOTICE</button></li>
+      <div style="padding:20px;display:none" id="delete">
+       <form method="post" action="delete_backend.php">
+       <input type="number" placeholder="Notice ID" name="id">
+<!--        <input type="text" style="width:700px;" name="add" placeholder="Text">-->
+        <button>Delete</button>
+        </form>
+      </div>
+      
+      <li style="padding-top:10px;"><button id="viewbtn">View All Notice ID's</button></li>
+      <div style="padding-top:20px;display:none;" id="view" >
+        <table border="1" cellspacing="5" cellpadding="5" id="table">
+
+          <tr>
+            <th>Id</th>
+            <th>Notice</th>
+          </tr>
+
+          
+         
+
+        </table>
+
+      
+   
+      </div>
+     
+      
+      
+      
+    </ul>
+  </div>
+</body>
+<script>
+  function add(){
+    var x = document.getElementById("add");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+  
+  function view(){
+    var z = document.getElementById("view");
+   if (z.style.display === "none") {
+        z.style.display = "block";
+    } else {
+        z.style.display = "none";
+    }
+  }
+  
+  
+  </script>
+  
+  <script>
+  function delete1(){
+    var y = document.getElementById("delete");
+   if (y.style.display === "none") {
+        y.style.display = "block";
+    } else {
+        y.style.display = "none";
+    }
+  }</script>
+</html>

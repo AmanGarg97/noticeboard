@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Notice Board</title>
+</head>
+<body>
+    
+
+    <nav class="navbar navbar-light navbar-expand">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" class="d-inline-block align-top nav-img" alt="">
+        </a>
+        <h3 class="nav-heading">Bhagwan Parshuram Institute Of Technology</h3>
+    </nav>
+
+    <div class="row notices">
+        <div class="col-8 image-col">            
+            <div class="slideshow-container">
+                <div class="myslides fades">
+                    <h2 class="text-center notice-head">SEMINAR</h2>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 about-notice">
+                            <h1>Seminar on IOT.</h1>
+                            <h1>Date : 20/10/2018</h1>
+                            <h1>Place: 6A</h1>
+                            <h1>Time: 2:00pm - 4:00pm</h1>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>                    
+                </div>
+                <div class="myslides fades">
+                    <h2 class="text-center notice-head">WORKSHOP</h2>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 about-notice">
+                            <h1>WORKSHOP ON ANDROID DEVELOPMENT</h1>
+                            <h1>Date : 22/10/2018</h1>
+                            <h1>Place: Edusat(220)</h1>
+                            <h1>Time: 2:00pm - 4:00pm</h1>
+                            <h6>* Laptops are required.</h6>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class="col-4 notice-col">
+            <h2 class="text-center notice">Notices</h2>
+            <div class="">
+                <marquee behavior="scroll" direction="up">
+                <ul class="scroll list"><h5>11/09/2018</h5>
+                    <li class="notice-list"><h6>Seminar in 6A.</h6></li>
+                    <li class="notice-list"><h6>Workshop on Android Development. Time 2:00pm - 4:00pm</h6></li>
+                </ul>
+                <ul class="scroll list"><h5>10/09/2018</h5>
+                    <li class="notice-list"><h6>Book-bank of CSE-A(3rd sem).</h6></li>
+                    <li class="notice-list"><h6>Book-bank of CSE-A(3rd sem).</h6></li>
+                    <li class="notice-list"><h6>Book-bank of CSE-A(3rd sem).</h6></li>
+                </ul>
+                <ul class="scroll list"><h5>09/09/2018</h5>
+                    <li class="notice-list"><h6>Tech Event on 10/09/2018</h6></li>
+                    <li class="notice-list"><h6>Book-bank of CSE-A(3rd sem).</h6></li>
+                    <li class="notice-list"><h6>Book-bank of CSE-A(3rd sem).</h6></li>
+                </ul>
+                </marquee>                
+            </div>          
+        </div>
+    </div>
+
+    <script>
+    
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("myslides");
+        for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1} ;
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000);
+    }
+ 
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+    crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+    crossorigin="anonymous"></script>
+
+</body>
+</html>
