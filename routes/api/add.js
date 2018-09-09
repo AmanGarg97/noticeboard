@@ -8,9 +8,6 @@ route.get('/', (req, res) => {
 
     notice.findAll()
         .then((notices) => {
-            console.log("garg")
-            let ans = JSON.parse(JSON.stringify(notices))
-            console.log(ans[0].id)
             res.status(200).send(notices)
             
         })
