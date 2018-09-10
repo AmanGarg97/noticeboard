@@ -17,7 +17,7 @@ function creatediv(notice){
     return $(`
 
     <div class="myslides fades">
-    <h2 class="text-center notice-head">WORKSHOP</h2>
+    <h2 class="text-center notice-head">${notice.title}</h2>
                     <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-10 about-notice">
@@ -34,29 +34,24 @@ function creatediv(notice){
 
 }
 
-// $(function () {
-
-//     let productList = $('#product-list')
-
-//     ShowNotice(function (products) {
-//         console.log("out for")
-//         productList.empty()
-//         for (let i = 0 ; i < 10 ; i++) {
-//             console.log("fofr loo[")
-//             productList.append(creatediv(product))
-//         }
-//     })
-
-// })
+function createList(notice){
+    return $(`
+    
+    <li class="notice-list"><h6>${notice.notice}</h6></li>
+    `)
+}
 
 $(function () {
 
     let productList = $('#product-list')
+    let list = $('#list1')
+    
 
     ShowNotice(function (products) {
         productList.empty()
         for (product of products) {
             productList.append(creatediv(product))
+            list.append(createList(product))
         }
     })
 

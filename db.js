@@ -15,14 +15,15 @@ const notice = db.define('notices' , {
 
     } ,
 
-    notice: {
+    notice: {type : sequelize.STRING} , 
+
+    title:{
+
         type : sequelize.STRING , 
+        defaultValue : 'NOTICE'
         
-        allowNull : false 
 
-    
-
-    }
+    },
 })
 
 db.sync()

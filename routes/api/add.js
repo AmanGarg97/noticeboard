@@ -25,15 +25,32 @@ route.post('/', (req, res) => {
 
     notice.create({
         id : req.body.id , 
-        notice : req.body.notice
+        notice : req.body.notice,
+        title : req.body.title
     }).then((user) => {
         res.status(201).send(user)
-        console.log("Added")
     }).catch((err) => {
         res.status(501).send({
             error: "Could not add new notice"
         })
     })
+})
+
+route.delete('/' , (req,res) => {
+    // We expect that req will have the id of the notice to be deleted.
+
+    notice.destroy({
+        where: {
+           id : req.body.id
+        }
+    }).then(()=>{
+        res.send('Deleted Successfully')
+    }).catch((err) =>{
+        res.status(501).send({
+            error : "Could not delete"
+        })
+    })
+
 })
 
 exports = module.exports = route
