@@ -31,7 +31,7 @@ db.sync()
     console.log("Database created successfully")
 })
 .catch((err) => {
-    console.log("Error in database")
+    console.log(err)
 })
 
 exports = module.exports = {
