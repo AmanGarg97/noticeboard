@@ -24,6 +24,11 @@ const notice = db.define('notices' , {
         
 
     },
+
+    imagepath:{
+        type : sequelize.STRING,
+        defaultValue : null
+    }
 })
 
 db.sync()

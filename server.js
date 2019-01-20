@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 var multer  = require('multer')
 const ejs = require('ejs');
-
+const notice = require('./db').notice
 
 const app = express();
 
@@ -68,8 +68,10 @@ app.post('/upload', (req, res) => {
         msg: err
       });
     } else {
-        console.log(req.file)
-        console.log()
+        //console.log(req.file.path)
+        //console.log(req.body.id)
+        //console.log('Aman Garg')
+        var pathimage = req.file.path;
       if(req.file == undefined){
         res.render('index', {
           msg: 'Error: No File Selected!'
@@ -79,8 +81,23 @@ app.post('/upload', (req, res) => {
           msg: 'File Uploaded!',
           file: `uploads/${req.file.filename}`
         });
+      //Adding to database.
+  notice.update(
+    {imagepath : pathimage},
+    {where : {id : req.body.id}}
+  ).then(result =>
+     handleResult(result)
+  ).catch(err=>
+    res.status(501).send({
+      error: "Could not add image"
+  })
+  )
+
       }
     }
+//     console.log("outside uploads")
+// console.log(req.body.id)
+// console.log(req.file.path)
   });
 });
 
