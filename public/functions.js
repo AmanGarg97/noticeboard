@@ -14,6 +14,7 @@ function ShowNotice(done){
 }
 
 function creatediv(notice){
+    let imgpath = notice.imagepath.slice(6);
     return $(`
 
     <div class="myslides fades">
@@ -25,8 +26,15 @@ function creatediv(notice){
                                ${notice.notice}
                             </h1>
                         </div>
+                        
+
                         <div class="col-md-1"></div>
-                    </div>  
+                    </div> 
+                    <div style="padding:25px;">
+                     <img src="${imgpath}" style="max-width:80%;max-height:2%;margin:10%;margin-top:2%"> 
+                    
+                    </div>
+                    
                 </div>    
     `
 
